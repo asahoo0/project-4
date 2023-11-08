@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Data Visualization</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <div id="bar-chart"></div>
+    </div>
+
+    <div style="text-align: center;">
+        <div id="pie-chart"></div>
+    </div>
+
+    <script>
+        var cryptoData = {{ crypto_data | tojson | safe }};
+        var names = cryptoData.map(crypto => crypto.name);
+        var prices = cryptoData.map(crypto => crypto.price);
+        var marketShares = cryptoData.map(crypto => crypto.market_share);
+
+        // Bar Chart
+        var barData = [{
+            x: names,
+            y: prices,
+            type: 'bar',
+            text: prices.map(price => '$' + price.toFixed(2)),
+            hoverinfo: 'text',
+            marker: {
+                color: 'rgb(0, 128, 255)'
+            }
+        }];
+
+        var barLayout = {
+            title: 'Top 10 Cryptocurrencies by Price',
+            xaxis: {
+                title: 'Cryptocurrency',
+                showticklabels: true
+            },
+            yaxis: {
+                title: 'Price (USD)'
+            }
+        };
+
+        Plotly.newPlot('bar-chart', barData, barLayout);
+
+        // Pie Chart
+        var pieData = [{
+        labels: names,
+        values: marketShares,
+        type: 'pie',
+        textinfo: 'percent', // Display only percentages on hover
+        hoverinfo: 'label+percent',
+        textposition: 'inside'
+    }];
+
+        var pieLayout = {
+            title: 'Market Share'
+        };
+
+        Plotly.newPlot('pie-chart', pieData, pieLayout);
+    </script>
+</body>
+
+</html>
