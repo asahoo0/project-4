@@ -4,7 +4,7 @@
     "description": "This example is so cool.",
     "main": "web.js",
     "scripts": {
-        "start": "nodemon --exec node server.js"
+        "start": "nodemon --exec node app.js"
     },
     "keywords": [
       "example",
