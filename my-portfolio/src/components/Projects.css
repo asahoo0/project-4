@@ -1,0 +1,36 @@
+/* Projects.css */
+
+.projects-container {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    color: #3498db;
+    margin-bottom: 20px;
+  }
+  
+  .project-item {
+    margin-bottom: 20px;
+  }
+  
+  .project-title {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
+    line-height: 1.6;
+  }
+
+  .project-icons {
+    margin-top: 10px;
+  }
+  
+  .project-icon {
+    margin-right: 10px;
+    color: #3498db; /* Color for social media icons */
+    font-size: 30px;
+  }
+  

@@ -1,0 +1,29 @@
+/* Education.css */
+
+.education-container {
+    padding: 20px;
+    margin-top: 20px;
+    height: 50vh;
+    justify-content: center;
+  }
+  
+  .section-title {
+    color: #3498db;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .education-item {
+    margin-bottom: 20px;
+  }
+  
+  .education-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .education-details {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
