@@ -5,6 +5,10 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import { Router } from 'react-router-dom';
+
+<Router basename={"/my_portfolio"}></Router>
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
