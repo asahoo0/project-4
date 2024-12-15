@@ -9,7 +9,7 @@ st.set_page_config(layout="wide")
 
 @st.cache_data
 def load_data():
-    base_folder = "C:/Users/asaho/Downloads/data/project-4"
+    base_folder = "data"
     ratings = pd.read_csv(f'{base_folder}/ratings.dat', sep='::', engine = 'python', header=None)
     ratings.columns = ['UserID', 'MovieID', 'Rating', 'Timestamp']
 
